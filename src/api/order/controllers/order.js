@@ -19,7 +19,6 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
                     product_data: {
                         name: product.title,
                         description: product.description,
-                        images: [product.image],
                     },
                     unit_amount: product.price * 100, // Price in the smallest unit
                 },
