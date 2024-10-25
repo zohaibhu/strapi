@@ -15,7 +15,8 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://candlewebsite.vercel.app'],  // Add your Vercel frontend URL
+      origin: '*',
+      // origin: ['https://candlewebsite.vercel.app'],  // Add your Vercel frontend URL
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       credentials: true,
