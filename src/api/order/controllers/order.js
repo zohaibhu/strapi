@@ -15,7 +15,7 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
             // Create line items for Stripe
             const lineItems = products.map((product) => ({
                 price_data: {
-                    currency: 'usd', 
+                    currency: 'PKR', 
                     product_data: {
                         name: product.title,
                         description: product.description,
