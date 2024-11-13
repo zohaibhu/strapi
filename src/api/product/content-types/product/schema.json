@@ -52,8 +52,23 @@
       "enum": [
         "bestsellers",
         "featured",
-        "bestselling"
+        "bestselling",
+        "Category",
+        "Models"
       ]
+    },
+    "discription1": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

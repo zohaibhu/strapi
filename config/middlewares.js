@@ -7,7 +7,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'https:', 'https://candlewebsite.vercel.app'], // Allow Vercel URL
+          'connect-src': ["'self'", 'http:', 'http://localhost:1337'], // Allow Vercel URL
         },
       },
     },
@@ -29,3 +29,15 @@ module.exports = [
   'strapi::favicon',
   'strapi::public',
 ];
+// module.exports = [
+//   'strapi::logger',
+//   'strapi::errors',
+//   'strapi::security',
+//   'strapi::cors',
+//   'strapi::poweredBy',
+//   'strapi::query',
+//   'strapi::body',
+//   'strapi::session',
+//   'strapi::favicon',
+//   'strapi::public',
+// ];

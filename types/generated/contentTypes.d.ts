@@ -711,8 +711,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::sub-category.sub-category'
     >;
     type: Schema.Attribute.Enumeration<
-      ['bestsellers', 'featured', 'bestselling']
+      ['bestsellers', 'featured', 'bestselling', 'Category', 'Models']
     >;
+    discription1: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
