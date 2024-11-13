@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
       port: env.int('DATABASE_PORT', 3306),
       database: env('DATABASE_NAME', 'railway'),  // Your MYSQL_DATABASE value
       user: env('DATABASE_USERNAME', 'root'),     // Your MYSQLUSER value
-      password: env('DATABASE_PASSWORD', 'vBnIAgEgtcpxHNKzWIOesQBMozxpUQzP'), // Your MYSQLPASSWORD value
+      password: env('DATABASE_PASSWORD', 'DUNHqkFPKTqTllToMWggbADRlnIAaUeg'), // Your MYSQLPASSWORD value
       ssl: {
         rejectUnauthorized: false
       }
