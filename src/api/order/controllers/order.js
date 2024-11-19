@@ -15,11 +15,9 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
             // Create line items for Stripe
             const lineItems = products.map((product) => {
                 // Check if product.image exists; if not, set a default image or handle the absence
-                const imageUrl = product.image && product.image.startsWith('http')
-                    ? product.image  // Use the full URL if it’s already there
-                    : product.image  // If it's defined, prepend STRAPI_BASE_URL
-                    ? `${process.env.STRAPI_BASE_URL}${product.image}` 
-                    : 'https://your-default-image-url.com/default-image.jpg';  // Use a default image if none is provided
+                const imageUrl = product.image1 && product.image1[0] && product.image1[0].formats.large.url
+                ? `${process.env.STRAPI_BASE_URL}${product.image1[0].formats.large.url}`
+                : 'https://your-default-image-url.com/default-image.jpg';   // Use a default image if none is provided
             
                 return {
                     price_data: {
