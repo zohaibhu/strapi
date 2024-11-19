@@ -16,9 +16,9 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
             const lineItems = products.map((product) => {
                 // Check if product.image exists; if not, set a default image or handle the absence
                 const imageUrl = product.image1 && product.image1[0] && product.image1[0].formats.large.url
-                ? `${process.env.STRAPI_BASE_URL}${product.image1[0].formats.large.url}`
-                : 'https://your-default-image-url.com/default-image.jpg';   // Use a default image if none is provided
-            
+                ? `https://d4designeraromacandle.up.railway.app${product.image1[0].formats.large.url}`
+                : 'https://d4designeraromacandle.up.railway.app/uploads/default-image.jpg';
+                
                 return {
                     price_data: {
                         currency: 'PKR',
