@@ -7,6 +7,7 @@ const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::order.order', ({ strapi }) => ({
     async create(ctx) {
+        
         try {
 
             // sending the data request into the body
@@ -14,24 +15,27 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
          
             // Create line items for Stripe
             const lineItems = products.map((product) => {
-                // Check if product.image exists; if not, set a default image or handle the absence
-                const imageUrl = product.image1 && product.image1[0] && product.image1[0].formats.large.url
-                ? `https://d4designeraromacandle.up.railway.app${product.image1[0].formats.large.url}`
-                : 'https://d4designeraromacandle.up.railway.app/uploads/default-image.jpg';
-                
+                const imageUrl = product.image1 && product.image1[0]?.formats?.large?.url
+                    ? `${process.env.BASE_URL + product.image1[0]?.formats?.large?.url}`
+                    : 'https://www.colishco.com/cdn/';
+            
                 return {
                     price_data: {
                         currency: 'PKR',
                         product_data: {
                             name: product.title,
-                            description: product.description,
-                            images: [imageUrl],  // Use the processed image URL here
+                            description: `Size: ${product.size || 'N/A'} \n Description:${product.description} \n Color: ${product.color?.title || product.color || 'N/A'}`, // Default values
+                            images: [imageUrl],
                         },
-                        unit_amount: product.price * 100, // Price in the smallest unit
+                        unit_amount: product.price * 100,
                     },
                     quantity: product.quantity,
                 };
             });
+            
+
+            //         Color: ${product.color?.title || product.color || 'N/A'}
+
             
             // Create Stripe session
             const session = await stripe.checkout.sessions.create({
