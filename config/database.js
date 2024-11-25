@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = ({ env }) => ({
   connection: {
-    client: 'postgres',
+    client: 'mysql',
     connection: {
       host: env('DATABASE_HOST', 'mysql.railway.internal'),
       port: env.int('DATABASE_PORT', 3306),
