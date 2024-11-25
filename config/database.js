@@ -9,7 +9,9 @@ module.exports = ({ env }) => ({
       database: env('DATABASE_NAME', 'railway'),
       user: env('DATABASE_USERNAME', 'root'),
       password: env('DATABASE_PASSWORD', 'DUNHqkFPKTqTllToMWggbADRlnIAaUeg'),
-      ssl: env.bool('DATABASE_SSL', true),
+      ssl: {
+        rejectUnauthorized: env.bool('DATABASE_SSL', true), // For self-signed certificates
+      },
     },
   },
 });
