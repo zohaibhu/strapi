@@ -34,7 +34,6 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
             });
             
 
-            //         Color: ${product.color?.title || product.color || 'N/A'}
 
             
             // Create Stripe session
