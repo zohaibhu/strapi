@@ -10,7 +10,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'http:', 'http://localhost:1337'], // Allow Vercel URL
+          'connect-src': ["'self'", 'https:', 'https://candlewebsite.vercel.app/'], // Allow Vercel URL
         },
       },
     },
