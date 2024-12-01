@@ -25,7 +25,6 @@ module.exports = [
       credentials: true,
     },
   },
-
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',

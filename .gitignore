@@ -3,8 +3,12 @@
 ############################
 
 .env
+<<<<<<< HEAD
 .Home.pub
 .Home
+=======
+
+>>>>>>> 4918aba2574bd6138f9ef54ed7889d80819e4528
 .DS_Store
 .AppleDouble
 .LSOverride
