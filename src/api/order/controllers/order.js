@@ -27,7 +27,7 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
             
                 // Extract image URL from 'img' field
                 if (product.img) {
-                    imageUrl = product.img.startsWith('http')
+                    imageUrl = product.img.startsWith('https')
                         ? product.img
                         : `${process.env.STRAPI_BASE_URL}${product.img}`;
                 }
